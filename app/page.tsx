@@ -65,52 +65,54 @@ export default function Home() {
 
       {/* Navbar */}
 
-      <nav className="flex items-center justify-between w-full px-60 h-20 fixed top-0 bg-white dark:bg-gray-900 z-30">
-        <img src="/next.svg" alt="logo" className="h-4 invert-0 dark:invert" />
-        <div className="space-x-8">
-          <a href="/" className="dark:text-white text-black">
-            Home
-          </a>
-          <a href="#" className="text-gray-600 dark:text-gray-400">
-            Blog
-          </a>
-          <a href="#" className="text-gray-600 dark:text-gray-400">
-            Single Post
-          </a>
-          <a href="#" className="text-gray-600 dark:text-gray-400">
-            Pages
-          </a>
-          <a href="#" className="text-gray-600 dark:text-gray-400">
-            Contact
-          </a>
+      <nav className="w-full h-20 fixed top-0 bg-white dark:bg-gray-900 z-30">
+        <div className="flex items-center justify-between h-full max-w-5xl mx-auto p-6">
+          <img src="/next.svg" alt="logo" className="h-4 invert-0 dark:invert" />
+          <div className="space-x-8 hidden md:block">
+            <a href="/" className="dark:text-white text-black">
+              Home
+            </a>
+            <a href="#" className="text-gray-600 dark:text-gray-400">
+              Blog
+            </a>
+            <a href="#" className="text-gray-600 dark:text-gray-400">
+              Single Post
+            </a>
+            <a href="#" className="text-gray-600 dark:text-gray-400">
+              Pages
+            </a>
+            <a href="#" className="text-gray-600 dark:text-gray-400">
+              Contact
+            </a>
+          </div>
+          <button
+            onClick={handleThemeChange} 
+            className="outline-none hidden md:block bg-black/15 dark:bg-blue-600 p-1 w-14 rounded-full h-8 pl-1 dark:pl-7 text-black dark:text-white"
+          >
+            <div className="h-6 w-6 bg-white shadow-md rounded-full"></div>
+          </button>
         </div>
-        <button
-          onClick={handleThemeChange} 
-          className="outline-none bg-black/15 dark:bg-blue-600 p-1 w-14 rounded-full h-8 pl-1 dark:pl-7 text-black dark:text-white"
-        >
-          <div className="h-6 w-6 bg-white shadow-md rounded-full"></div>
-        </button>
       </nav>
 
       {/* Posts */}
 
       {postPreviews.length === 0 ? 
-      <div className="max-w-5xl mx-auto min-h-[30rem]">
+      <div className="max-w-5xl mx-auto min-h-[30rem] p-6">
         <h3 className="font-semibold text-lg py-4 text-black dark:text-white">No Posts Found</h3>
       </div>
       : <>
-        <div className="max-w-5xl mx-auto relative">
+        <div className="max-w-5xl mx-auto relative p-6">
           <img src={featuredPost.imgUrl} alt="featured post" className="w-full h-96 object-cover rounded-xl mt-8" />
-          <div className="rounded-xl w-96 drop-shadow-lg p-6 absolute left-6 -bottom-12 bg-white dark:bg-gray-900 border-gray-200 dark:border-slate-800 border-2">
+          <div className="rounded-xl md:w-96 w-80 drop-shadow-lg p-6 absolute left-10 -bottom-12 bg-white dark:bg-gray-900 border-gray-200 dark:border-slate-800 border-2">
             <span className="bg-blue-500 dark:bg-blue-500/60 text-white text-sm py-1 px-2 rounded-md">{featuredPost.tag}</span>
             <a href={`/blog/${featuredPost.slug}`}><h2 className="text-4xl font-bold dark:text-white text-black my-3">{featuredPost.title}</h2></a>
             <div className="text-gray-500 space-x-6"><span className="text-gray-600 dark:text-gray-400">{featuredPost.author}</span><span>{featuredPost.date}</span></div>
           </div>
         </div>
         {postPreviews.length > 1 ?
-        <div className="max-w-5xl mx-auto mt-24 mb-16">
+        <div className="max-w-5xl mx-auto mt-24 mb-16 p-6">
           <h3 className="font-semibold text-lg py-4 text-black dark:text-white">Latest Posts</h3>
-          <div className="grid grid-cols-3 max-w-5xl mx-auto gap-3">{postPreviews}</div>
+          <div className="grid md:grid-cols-3 max-w-5xl mx-auto gap-3">{postPreviews}</div>
         </div> : 
       <div className="max-w-5xl mx-auto mt-24">
         <h3 className="font-semibold text-lg py-4 text-black dark:text-white">No More Posts Found</h3>
@@ -119,16 +121,16 @@ export default function Home() {
 
       {/* Footer */}
 
-      <div className="bg-gray-100 py-10 border-t-2 border-gray-300 dark:bg-[#0c0f1a] dark:border-slate-700">
+      <div className="bg-gray-100 py-10 border-t-2 p-6 border-gray-300 dark:bg-[#0c0f1a] dark:border-slate-700">
         <div className="max-w-5xl mx-auto text-sm">
-          <div className="grid grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-10">
             <div className="space-y-3">
               <h3 className="font-bold text-lg text-black dark:text-white">About Us</h3>
               <p className="text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
               <p className="text-gray-600 dark:text-gray-400"><b className="text-black dark:text-white">Email : </b>info@acm.club <br />
               <b className="text-black dark:text-white">Phone : </b>+91 9811X XXXXX</p>
             </div>
-            <div className="flex md:flex-row flex-col gap-10">
+            <div className="flex md:gap-10 gap-32">
               <div className="space-y-3">
                 <h3 className="font-bold text-lg text-black dark:text-white">Quick Links</h3>
                 <ul className="space-y-2">
@@ -150,7 +152,7 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            <div className="space-y-3 dark:bg-slate-500/10 p-4 rounded-lg">
+            <div className="space-y-3 dark:bg-slate-500/10 p-6 rounded-lg">
               <h3 className="font-bold text-lg text-black dark:text-white">Newsletter</h3>
               <p className="text-gray-600 dark:text-gray-400">Subscribe to our newsletter to get our latest news.</p>
               <form className="space-y-2">
@@ -160,7 +162,7 @@ export default function Home() {
             </div>
           </div>
           <hr className="border-t-2 border-gray-300 dark:bg-slate-500/20 dark:border-slate-700 my-6" />
-          <div className="flex justify-between items-center">
+          <div className="flex md:flex-row flex-col justify-between md:items-center gap-4">
             <div>
               <img src="/next.svg" alt="logo" className="h-4 invert-0 dark:invert mb-2" />
               <span className="text-gray-600 dark:text-gray-400">© 2024 ACM. All Rights Reserved.</span>
