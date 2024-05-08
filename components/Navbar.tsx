@@ -42,8 +42,8 @@ export default function Navbar({active}: Props) {
           <a href="/admin" className={active == 3 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
             Admin
           </a>
-          <a href="#" className={active == 4 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
-            Contact
+          <a href="/admin/login" className={active == 4 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
+            Login
           </a>
         </div>
         <div className="flex items-center gap-12 z-40">
@@ -75,8 +75,8 @@ export default function Navbar({active}: Props) {
             <a href="/admin" className={active == 3 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
               Admin
             </a>
-            <a href="#" className={active == 4 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
-              Contact
+            <a href="/admin/login" className={active == 4 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
+              Login
             </a>
           </div>
         </div>

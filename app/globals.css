@@ -29,6 +29,10 @@
     background-position: calc(100% - 1rem);
   }
 
+  #showPass {
+    @apply absolute h-4 w-4 right-2.5 cursor-pointer bg-transparent top-3.5 z-30 bg-[url('/eyeLight.svg')] dark:bg-[url('/eyeDark.svg')] bg-contain bg-center bg-no-repeat border-none
+  }
+
   .categorySelect {
     @apply bg-[url('/arrowLight.svg')] dark:bg-[url('/arrowDark.svg')]
   }

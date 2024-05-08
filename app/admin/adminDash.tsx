@@ -65,8 +65,8 @@ const Post = () => {
     return (
         <div className="max-w-5xl mx-auto p-6 my-12 transition-none opacity-0" ref={p_ref}>
             <h3 className="font-semibold text-lg py-4 text-black dark:text-white">Create New Post</h3>
-            <form className="grid grid-cols-3 gap-4" onSubmit={sendPost}>
-                <input type="text" name='title' placeholder='Post Title' className="col-span-3" />
+            <form className="grid md:grid-cols-3 gap-4" onSubmit={sendPost}>
+                <input type="text" name='title' placeholder='Post Title' className="md:col-span-3" />
                 <input type="text" name='author_name' placeholder='Author Name' />
                 <input type="file" name='img' placeholder='Cover Image' id='img_upload' hidden onChange={handleFileChange}/>
                 <label htmlFor="img_upload" className={`py-2.5 coverLabel ${fileName === 'Cover Image' ? "" : "text-black dark:text-white"}`}>{fileName}</label>
@@ -78,8 +78,8 @@ const Post = () => {
                     <option value="Travel" className='text-black dark:text-white'>Travel</option>
                     <option value="Sports" className='text-black dark:text-white'>Sports</option>
                 </select>
-                <textarea name="content" placeholder='Post Content in Markdown (.md) format...' className='col-span-3 min-h-40 py-2.5'></textarea>
-                <input type="submit" className='col-span-3 cursor-pointer border-0 bg-blue-600 dark:bg-blue-600 text-white' />
+                <textarea name="content" placeholder='Post Content in Markdown (.md) format...' className='md:col-span-3 min-h-40 py-2.5'></textarea>
+                <input type="submit" className='md:col-span-3 cursor-pointer border-0 bg-blue-600 dark:bg-blue-600 text-white' />
             </form>
         </div>
     )
