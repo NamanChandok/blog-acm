@@ -29,6 +29,7 @@ export default function Home() {
   })
 
   const [theme, setTheme] = useState("light");
+  const [navOpen, setNavOpen] = useState(false);
   
   useEffect(() => {  
     if (
@@ -41,6 +42,8 @@ export default function Home() {
       document.documentElement.classList.remove('dark');
     }
   }, []);
+
+
 
   useEffect(() => {
     if (theme === "dark") {
@@ -79,18 +82,54 @@ export default function Home() {
               Single Post
             </a>
             <a href="#" className="text-gray-600 dark:text-gray-400">
-              Pages
+              Admin
             </a>
             <a href="#" className="text-gray-600 dark:text-gray-400">
               Contact
             </a>
           </div>
-          <button
-            onClick={handleThemeChange} 
-            className="outline-none hidden md:block bg-black/15 dark:bg-blue-600 p-1 w-14 rounded-full h-8 pl-1 dark:pl-7 text-black dark:text-white"
-          >
-            <div className="h-6 w-6 bg-white shadow-md rounded-full"></div>
-          </button>
+          <div className="flex items-center gap-12 z-40">
+            <button
+              onClick={handleThemeChange} 
+              className="outline-none  bg-black/15 dark:bg-blue-600 p-1 w-14 rounded-full h-8 pl-1 dark:pl-7 text-black dark:text-white"
+            >
+              <div className="h-6 w-6 bg-white shadow-md rounded-full flex items-center justify-center">
+                <div className="h-4 w-4 bg-[url('/themeButton.svg')] bg-cover bg-left dark:bg-right"></div>
+              </div>
+            </button>
+            <button 
+              onClick={()=>{setNavOpen(!navOpen)}} 
+              className="w-6 h-6 bg-[url('/navButton.svg')] bg-cover dark:invert md:hidden outline-none" 
+              style={navOpen ? {backgroundPosition: "left"} : {backgroundPosition: "right"}}
+            ></button>
+          </div>
+          <div className="md:hidden fixed inset-y-0 w-96 bg-white dark:bg-slate-900 drop-shadow-md p-6 pt-20 text-right z-20" style={navOpen ? {right: "-24rem"} : {right: "0"}}>
+            <div className="flex flex-col gap-6 font-semibold tracking-tighter text-lg">
+              <a href="/" className="dark:text-white text-black">
+                Home
+              </a>
+              <a href="#" className="text-gray-600 dark:text-gray-400">
+                Blog
+              </a>
+              <a href="#" className="text-gray-600 dark:text-gray-400">
+                Single Post
+              </a>
+              <a href="#" className="text-gray-600 dark:text-gray-400">
+                Admin
+              </a>
+              <a href="#" className="text-gray-600 dark:text-gray-400">
+                Contact
+              </a>
+              {/* <button
+                onClick={handleThemeChange} 
+                className="outline-none bg-black/15 dark:bg-blue-600 p-1 w-14 rounded-full h-8 pl-1 dark:pl-7 text-black dark:text-white"
+              >
+                <div className="h-6 w-6 bg-white shadow-md rounded-full flex items-center justify-center">
+                  <div className="h-4 w-4 bg-[url('/themeButton.svg')] bg-cover bg-left dark:bg-right"></div>
+                </div>
+              </button> */}
+            </div>
+          </div>
         </div>
       </nav>
 
