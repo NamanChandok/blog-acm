@@ -1,8 +1,8 @@
-
-import Markdown from 'markdown-to-jsx'
 import matter from 'gray-matter'
 import fs from 'fs'
 import { PostMetadata } from "@/components/PostMetadata"
+import PostContent from './PostContent'
+import { get } from 'http'
 
 const getPostMetadata = (): PostMetadata[] => {
   const folder = 'posts/';
@@ -41,12 +41,14 @@ const getPostContent = (slug:string) => {
 export default function Home(props: any) {
 
   const slug = props.params.slug;
-  const post = getPostContent(slug);
+  const post = {
+    content: getPostContent(slug).content,
+    data: {...getPostContent(slug).data}
+  };
 
   return (
     <main>
-      {JSON.stringify(post.data)}
-      {post.content}
+      <PostContent post={{...post}} />
     </main>
   )
 }
