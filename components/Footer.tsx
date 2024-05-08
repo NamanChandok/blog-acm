@@ -58,10 +58,10 @@ const AboutFooter = () => {
         <div className="space-y-3">
           <h3 className="font-bold text-lg text-black dark:text-white">Quick Links</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="text-gray-600 dark:text-gray-400">Home</a></li>
-            <li><a href="#" className="text-gray-600 dark:text-gray-400">Blog</a></li>
+            <li><a href="/" className="text-gray-600 dark:text-gray-400">Home</a></li>
+            <li><a href="/blog/post-1" className="text-gray-600 dark:text-gray-400">Blog</a></li>
             <li><a href="#" className="text-gray-600 dark:text-gray-400">Single Post</a></li>
-            <li><a href="#" className="text-gray-600 dark:text-gray-400">Pages</a></li>
+            <li><a href="/admin" className="text-gray-600 dark:text-gray-400">Admin</a></li>
             <li><a href="#" className="text-gray-600 dark:text-gray-400">Contact</a></li>
           </ul>
         </div>

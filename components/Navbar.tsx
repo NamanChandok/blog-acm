@@ -39,7 +39,7 @@ export default function Navbar({active}: Props) {
           <a href="/blog/post-1" className={active == 2 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
             Single Post
           </a>
-          <a href="#" className={active == 3 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
+          <a href="/admin" className={active == 3 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
             Admin
           </a>
           <a href="#" className={active == 4 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
@@ -63,19 +63,19 @@ export default function Navbar({active}: Props) {
         </div>
         <div className="md:hidden fixed inset-y-0 w-96 bg-white dark:bg-slate-900 drop-shadow-md p-6 pt-20 text-right z-20" style={Nav ? {right: "-24rem"} : {right: "0"}}>
           <div className="flex flex-col gap-6 font-semibold tracking-tighter text-lg">
-            <a href="/" className="dark:text-white text-black">
+            <a href="/" className={active == 0 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
               Home
             </a>
-            <a href="#" className={active == 0 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
+            <a href="#" className={active == 1 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
               Blog
             </a>
-            <a href="#" className={active == 0 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
+            <a href="/blog/post-1" className={active == 2 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
               Single Post
             </a>
-            <a href="#" className={active == 0 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
+            <a href="/admin" className={active == 3 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
               Admin
             </a>
-            <a href="#" className={active == 0 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
+            <a href="#" className={active == 4 ? "dark:text-white text-black" : "text-gray-600 dark:text-gray-400"}>
               Contact
             </a>
           </div>
