@@ -62,7 +62,7 @@ const AboutFooter = () => {
             <li><a href="/blog/post-1" className="text-gray-600 dark:text-gray-400">Blog</a></li>
             <li><a href="#" className="text-gray-600 dark:text-gray-400">Single Post</a></li>
             <li><a href="/admin" className="text-gray-600 dark:text-gray-400">Admin</a></li>
-            <li><a href="#" className="text-gray-600 dark:text-gray-400">Contact</a></li>
+            <li><a href="/admin/login" className="text-gray-600 dark:text-gray-400">Login</a></li>
           </ul>
         </div>
         <div className="space-y-3">
